@@ -1,0 +1,168 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #000044;
+    color: #ffffcc;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    transition-property: max-height padding;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;   
+    animation: expand-animation 1s ease-out; 
+    opacity: 1;  
+    width: 100%; 
+    overflow: hidden;
+    border-radius: 10px;
+    grid-template-columns: 60% 20% 20%; 
+    align-items: center; 
+    margin: 5px; 
+    font-size: 1.6rem; 
+}
+
+li.unchecked {
+    color: rgba(255, 255, 204, 1);
+    background-color: rgba(60, 60, 60, 1);
+    text-decoration: none;
+}
+
+li.checked {
+    color: rgba(255, 255, 204, .3);
+    background-color: rgba(60, 60, 60, .3);
+    text-decoration: line-through;
+}
+
+li.open {
+    max-height: 150px;
+    padding: 10px;
+}
+
+li.closed {
+    max-height: 0px;
+    padding: 0px;
+}
+
+
+
+button:hover {
+    opacity: .6;
+}
+
+.navbar-bg {
+    position: fixed;
+    top: 0; 
+    height: 64px; 
+    width: 100%; 
+    opacity: .85; 
+    background-color: #000044;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 64px; 
+    width: 100%; 
+    max-width: 1200px; 
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+.input-field {
+    text-align: center;
+    width: 50vw;
+    min-width: 210px; 
+    max-width: 350px; 
+    margin: 0; 
+    padding: 0; 
+    height: 2.5rem;
+    font-size: 1.4rem; 
+    background-color: #F7F7F7; 
+    border: solid 2px #0080ff; 
+    font-family: serif;
+}
+
+.submitButton {
+    text-align: center;
+    margin: 0 0 0 10px; 
+    height: 3rem;
+    width: 3rem; 
+    color: #ffffcc; 
+    font-weight: bold; 
+    background-color: #000044; 
+    border-radius: 5px; 
+    border: 3px solid #ffffcc;
+    font-size: 1.5rem; 
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    opacity: .6;
+}
+
+.fadein {
+    animation: fade-animation 1.5s ease-out;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+
+@keyframes fade-animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes expand-animation {
+    from {
+        max-height: 0px
+    }
+
+    to {
+        max-height: 100px
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        height: 100%;
+    }
+
+    to {
+        opacity: 0;
+        height: 0;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }    
+    
+}
